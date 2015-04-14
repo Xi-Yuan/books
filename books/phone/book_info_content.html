@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="book_info_content/css/main.css">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ac uinn-de1">
+            <div class="ub-img ziben umh-list8 umw-list6"></div>
+            <div class="ub ub-ver uinn">
+                <div class="ulev-app2 t-bla ">
+                    资本的别名叫自由
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    作者：辛夷坞
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    分类：小说文学
+                </div>
+                <div class="ulev-4 t-gra-book uinn-details">
+                    ￥6.00
+                </div>
+            </div>
+        </div>
+        
+        <div class="ub ub-ac ub-f1 umar-at2 b-gra-c9 ubt">
+            <div class="tx-c t-gra c-wh ubb-list ub-f1 uinn ulev-app1">
+                简介
+            </div>
+            <div class="tx-c t-gra ub-f1 ulev-app1">
+                书评
+            </div>
+        </div>
+        <div class="t-gra-book tx-l uinn ulev-app1 ulh-rd1">
+            青春文学领军人物辛夷坞笔下最唯美的爱情守望。青春文学领军人物辛夷坞笔下最唯美的爱情守望。
+            青春文学领军人物辛夷坞笔下最唯美的爱情守望。青春文学领军人物辛夷坞笔下最唯美的爱情守望。青春文学领军人物辛夷坞笔下最唯美的爱情守望。
+        </div>
+        <div id="listview" class="umar-a sc-bg">
+        </div>
+
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            showGoods();
+        });
+        function showGoods() {
+            var arrData = [{
+                "goods" : "xx_content/css/myImg/gs1.png",
+                "synopsis" : "情人节礼物怡吻手工松露巧...",
+                "price" : "￥69",
+                "price2" : "￥99",
+                "popularity" : "18",
+
+            }, {
+                "goods" : "xx_content/css/myImg/gs2.png",
+                "synopsis" : "香港OPPO女包2014新款包",
+                "price" : "￥69",
+                "price2" : "￥99",
+                "popularity" : "18",
+            }, {
+                "goods" : "xx_content/css/myImg/gs3.png",
+                "synopsis" : "包邮零俊间厅柜 门厅玄关隔",
+                "price" : "￥69",
+                "price2" : "￥99",
+                "popularity" : "68",
+            }, {
+                "goods" : "xx_content/css/myImg/gs4.png",
+                "synopsis" : "普耐尔S1学习机安卓系统7寸",
+                "price" : "￥629",
+                "price2" : "￥99",
+                "popularity" : "21",
+            }, {
+                "goods" : "xx_content/css/myImg/gs5.png",
+                "synopsis" : "KINGBAND棒球服男 棒球衫",
+                "price" : "￥69",
+                "price2" : "￥99",
+                "popularity" : "233",
+            }, {
+                "goods" : "xx_content/css/myImg/gs6.png",
+                "synopsis" : "奢谷SHEGU女士韩版上衣",
+                "price" : "￥69",
+                "price2" : "￥99",
+                "popularity" : "122",
+            }];
+
+            var listData = [];
+            for (var i = 0,
+                len = arrData.length; i < len; i++) {
+                var list = {
+                    title : arrData[i].synopsis,
+                    icon : arrData[i].goods,
+                    describe : '<div class="sc-text-warn ">' + arrData[i].price + '</div>' + '<div class="ub ub-pe bc-btn bc-text-head uinn-c3 c-blu2 c-m1 t-wh uts"> 我要买</div>'
+                }
+                listData.push(list);
+            }
+            var lv1 = appcan.listview({
+                selector : "#listview",
+                type : "thickLine",
+                hasIcon : true,
+                hasAngle : false,
+                hasSubTitle : false,
+                multiLine : 1,
+                hasCheckbox : false,
+                align : 'left'
+            });
+            lv1.set(listData);
+        }
+ </script>
+</html>
